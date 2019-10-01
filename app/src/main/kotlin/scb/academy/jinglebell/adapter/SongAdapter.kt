@@ -26,13 +26,7 @@ class SongAdapter(private val listener: OnSongClickListener)
         holder.bind(_songs[position], listener)
     }
 
-    override fun getItemCount(): Int {
-        return if (songs.count() == 0) {
-            0
-        } else {
-            songs.count() + 1
-        }
-    }
+    override fun getItemCount() = _songs.count()
 
     fun submitList(list: List<Song>) {
         _songs = list
