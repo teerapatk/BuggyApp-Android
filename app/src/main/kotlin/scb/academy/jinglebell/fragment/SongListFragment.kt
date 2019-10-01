@@ -57,9 +57,11 @@ class SongListFragment : Fragment(), OnSongClickListener {
     private fun loadSongs()  {
         ApiManager.artistService.songs().enqueue(songListCallback)
     }
-    override fun onSongClick(song: Song) {
 
+    override fun onSongClick(song: Song) {
+        context?.let { SongInfoActivity.startActivity(it, song) }
     }
+
 
 
 }
