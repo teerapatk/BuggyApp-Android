@@ -37,7 +37,7 @@ class SongListFragment : Fragment(), OnSongClickListener {
         }
 
         override fun onResponse(call: Call<SongSearchResult>, response: Response<SongSearchResult>) {
-            val song = response.body() ?:return
+            val song = response.body() ?: return
             songAdapter.submitList(song.results)
         }
     }
@@ -54,14 +54,13 @@ class SongListFragment : Fragment(), OnSongClickListener {
         loadSongs()
     }
 
-    private fun loadSongs()  {
+    private fun loadSongs() {
         ApiManager.artistService.songs().enqueue(songListCallback)
     }
 
     override fun onSongClick(song: Song) {
-        context?.let { SongInfoActivity.startActivity(it, song) }
+        SongInfoActivity.startActivity(rvSongs.context, song)
     }
-
 
 
 }

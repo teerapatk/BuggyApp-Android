@@ -11,8 +11,8 @@ class HelloActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_KEY_MODEL = "MODEL"
-        fun startActivity(context: Context, name: String) =
-            context.startActivity(
+        fun startActivity(context: Context?, name: String) =
+            context?.startActivity(
                 Intent(context, HelloActivity::class.java).also { myIntent ->
                     myIntent.putExtra(EXTRA_KEY_MODEL, name)
                 })

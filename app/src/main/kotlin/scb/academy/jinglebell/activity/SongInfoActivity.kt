@@ -21,8 +21,8 @@ class SongInfoActivity : AppCompatActivity() {
         private const val DATE_FORMAT_DATE_ONLY = "YYYY-MM-dd"
 
         fun startActivity(context: Context, song: Song) =
-            context.startActivity(Intent(context, SongInfoActivity::class.java).also {
-                  myIntent -> myIntent.putExtra(EXTRA_SONG,song)
+            context.startActivity(Intent(context, SongInfoActivity::class.java).also { myIntent ->
+                myIntent.putExtra(EXTRA_SONG, song)
             })
     }
 

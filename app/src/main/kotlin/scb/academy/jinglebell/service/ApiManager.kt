@@ -10,10 +10,10 @@ object ApiManager {
     val artistService by lazy { createService<ArtistApiService>("http://54.251.183.191:3000/") }
 
     private inline fun <reified T> createService(baseUrl: String): T =
-            Retrofit.Builder()
-                    .baseUrl(baseUrl)
-                    .addConverterFactory(GsonConverterFactory.create())
-                    .build()
-                    .run { create(T::class.java) }
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .run { create(T::class.java) }
 
 }

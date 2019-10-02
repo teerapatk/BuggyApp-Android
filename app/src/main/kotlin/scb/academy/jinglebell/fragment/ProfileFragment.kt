@@ -1,6 +1,5 @@
 package scb.academy.jinglebell.fragment
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,8 +22,7 @@ class ProfileFragment : Fragment() {
     private fun setView() {
         btnAdd.setOnClickListener {
             var name = inputName.text.toString()
-
-            context?.let { it1 -> HelloActivity.startActivity(it1, name) }
+            HelloActivity.startActivity(context, name)
         }
     }
 }

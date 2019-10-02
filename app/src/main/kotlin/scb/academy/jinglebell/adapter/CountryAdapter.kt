@@ -12,7 +12,7 @@ import scb.academy.jinglebell.extension.setImageUrl
 import scb.academy.jinglebell.model.Country
 
 class CountryAdapter(
-        countries: List<Country> = listOf()
+    countries: List<Country> = listOf()
 ) : ListAdapter<Country, CountryItemViewHolder>(CountryItemCallback()) {
 
     init {
@@ -29,15 +29,15 @@ class CountryAdapter(
 class CountryItemCallback : DiffUtil.ItemCallback<Country>() {
 
     override fun areItemsTheSame(oldItem: Country, newItem: Country): Boolean =
-            oldItem.name == newItem.name
+        oldItem.name == newItem.name
 
     override fun areContentsTheSame(oldItem: Country, newItem: Country): Boolean =
-            oldItem == newItem
+        oldItem == newItem
 
 }
 
 class CountryItemViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
-        LayoutInflater.from(parent.context).inflate(R.layout.item_country, parent, false)
+    LayoutInflater.from(parent.context).inflate(R.layout.item_country, parent, false)
 ) {
 
     private val tvName: TextView = itemView.findViewById(R.id.tv_country_name)
@@ -48,7 +48,7 @@ class CountryItemViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
         tvName.text = country.name
         if (country.capital.isEmpty()) {
             tvCapital.text = "Capital: -"
-        }else{
+        } else {
             tvCapital.text = "Capital: ${country.capital}"
         }
         ivFlag.setImageUrl(country.imageUrl)
